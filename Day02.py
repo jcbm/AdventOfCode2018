@@ -11,22 +11,12 @@ def part1():
 	labels = read_input_file()
 	two_count = 0
 	three_count = 0
-	for line in labels:
-		print("Parsing label: " + line) 
-		contains_exactly_two = False
-		contains_exactly_three = False
+	for line in labels: 
 		counter = Counter(line)
-		for ele in counter:
-			if (counter[ele] == 2):
-				contains_exactly_two = True
-				print("String contains exactly two " + ele + "'s")
-			elif (counter[ele] == 3):
-				contains_exactly_three = True
-				print("String contains exactly three " + ele + "'s")
-		if(contains_exactly_two):
-			two_count +=1
-		if(contains_exactly_three):
-			three_count +=1
+		if 2 in counter.values():
+			two_count += 1
+		if 3 in counter.values():
+			three_count += 1
 	return two_count * three_count
 	
 
